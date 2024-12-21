@@ -25,13 +25,8 @@ async function userSignInController(req, res) {
         const checkPassword = await bcrypt.compare(password, user.password)
 
         if (checkPassword) {
-            const tokenData = {
-                _id:user._id,
-                email:user.email,
-            }
          res.json({
             message: "Login Successfully",
-            data:tokenData,
             success:true,
             error:false
          })
