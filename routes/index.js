@@ -4,7 +4,6 @@ const router = express.Router()
 
 const userSignUpController = require("../controller/User/userSignUp")
 const userSignInController = require("../controller/User/userSignin")
-const userDetailscontroller = require('../controller/User/userDetails')
 const userLogout = require('../controller/User/userLogout')
 const allUsers = require('../controller/User/allUsers')
 const updateUser = require('../controller/User/updateUser')
@@ -15,7 +14,6 @@ const sendMessage = require('../controller/User/EmailSandMessage')
 
 router.post("/signup",userSignUpController)
 router.post("/signin",userSignInController)
-router.get("/user-details",userDetailscontroller)
 router.get("/userLogout",userLogout)
 
 //admin panel 
