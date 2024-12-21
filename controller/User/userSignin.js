@@ -29,7 +29,7 @@ async function userSignInController(req, res) {
                 _id:user._id,
                 email:user.email,
             }
-         res.json(localStorage.setItem("token",tokenData)).status(200).json({
+         res.json({
             message: "Login Successfully",
             data:tokenData,
             success:true,
