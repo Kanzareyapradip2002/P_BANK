@@ -29,8 +29,12 @@ async function userSignInController(req, res) {
                 _id:user._id,
                 email:user.email,
             }
-
-            localStorage.setItem("tokan",tokenData)
+         res.json(localStorage.setItem("token",tokenData)).status(200).json({
+            message: "Login Successfully",
+            data:tokenData,
+            success:true,
+            error:false
+         })
 
         } else {
             throw new Error("Please check Password")
