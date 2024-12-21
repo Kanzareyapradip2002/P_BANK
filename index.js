@@ -15,7 +15,7 @@ app.use(cors({
 }));
 app.use(express.json())
 app.use(cookieParser())
-app.use("https://bankbackend-dh51.onrender.com/api", router);
+app.use("/api", router);
 
 
 connectDB().then(() => {
