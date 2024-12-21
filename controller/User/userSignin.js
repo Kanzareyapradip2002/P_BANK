@@ -29,14 +29,8 @@ async function userSignInController(req, res) {
                 _id:user._id,
                 email:user.email,
             }
-         const token = await jwt.sign(tokenData,process.env.TOKEN_SECRET_KYE, { expiresIn: 60 * 60 * 6 });
-        
-         res.cookie("token",token).status(200).json({
-            message: "Login Successfully",
-            data:token,
-            success:true,
-            error:false
-         })
+
+            localStorage.setItem("tokan",tokenData)
 
         } else {
             throw new Error("Please check Password")
