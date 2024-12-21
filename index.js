@@ -9,7 +9,10 @@ const bodyParser = require('body-parser');
 const router = require("./routes");
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
-app.use(cors());
+app.use(cors({
+    origin:process.env.FRONTEND_URL,
+    credentials:true
+}));
 app.use(express.json())
 app.use(cookieParser())
 app.use("/api", router);
